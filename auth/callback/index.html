@@ -5,29 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Signed in — Reflex</title>
   <meta name="description" content="Authentication complete. Return to Reflex to continue." />
-  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    :root {
+      --bg: #fbfbfd;
+      --fg: #1d1d1f;
+      --muted: #6e6e73;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b0b0c;
+        --fg: #f5f5f7;
+        --muted: #a1a1a6;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    main {
+      max-width: 520px;
+      padding: 48px 24px;
+      text-align: center;
+    }
+    .icon {
+      width: 84px;
+      height: 84px;
+      margin: 0 auto 28px;
+      filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.12));
+    }
+    .icon svg { width: 100%; height: 100%; display: block; }
+    h1 {
+      font-size: 40px;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      margin: 0 0 12px;
+    }
+    p {
+      font-size: 17px;
+      color: var(--muted);
+      margin: 0;
+    }
+    @media (max-width: 560px) {
+      h1 { font-size: 32px; }
+      p { font-size: 16px; }
+    }
+  </style>
 </head>
 <body>
   <main>
-    <section class="hero">
-      <div class="icon" aria-hidden="true">
-        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#g)" />
-          <path d="M20 33 l9 9 16 -18" stroke="white" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-          <defs>
-            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#1d1d1f" />
-              <stop offset="100%" stop-color="#3a3a3c" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-
-      <h1>You're signed in</h1>
-      <p class="sub">
-        You can now close this page and return to Reflex.
-      </p>
-    </section>
+    <div class="icon" aria-hidden="true">
+      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#g)" />
+        <path d="M20 33 l9 9 16 -18" stroke="white" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1d1d1f" />
+            <stop offset="100%" stop-color="#3a3a3c" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <h1>You're signed in</h1>
+    <p>You can now close this page and return to Reflex.</p>
   </main>
 </body>
 </html>
